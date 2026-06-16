@@ -1,5 +1,6 @@
 package com.ankesh.studybuddy.user_service.dto;
 
+import com.ankesh.studybuddy.user_service.validation.ValidPassword;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
@@ -9,7 +10,7 @@ public class AuthenticationRequest {
     @NotBlank(message = "Email is required")
     private String email;
 
-    @NotBlank(message = "Password is required")
+    @ValidPassword
     private String password;
 
     public String getEmail() {
